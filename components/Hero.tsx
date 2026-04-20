@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { LINKS, PRIEST } from "@/lib/data";
+import { PortraitFrame } from "./PortraitFrame";
 
 export function Hero() {
   return (
@@ -29,14 +30,16 @@ export function Hero() {
           transition={{ duration: 1.4 }}
           className="relative mx-auto w-full max-w-[480px]"
         >
-          <Image
-            src="/os-lamia-cutout.png"
-            alt={`${PRIEST.name}, ${PRIEST.title}`}
-            width={1024}
-            height={1516}
-            priority
-            className="relative block h-auto w-full"
-          />
+          <PortraitFrame className="px-6 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5">
+            <Image
+              src="/os-lamia-cutout.png"
+              alt={`${PRIEST.name}, ${PRIEST.title}`}
+              width={1024}
+              height={1516}
+              priority
+              className="relative block h-auto w-full"
+            />
+          </PortraitFrame>
         </motion.div>
 
         {/* TITLE BLOCK */}
