@@ -5,34 +5,34 @@ export function Footer() {
   return (
     <footer className="relative border-t border-red-950/50 bg-black/60 px-4 py-14 md:px-8">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 text-center">
-        <div className="font-display text-xs uppercase tracking-[0.55em]" style={{ color: "#b84040" }}>
+        <div className="font-caps text-xs uppercase tracking-[0.55em]" style={{ color: "#c8977a" }}>
           ⚭ {PRIEST.name} ⚭
         </div>
-        <p className="font-display text-[10px] uppercase tracking-[0.45em] text-[#f5ecd7]/45">
+        <p className="font-caps text-[10px] uppercase tracking-[0.45em] text-[#ebdcc4]/45">
           {PRIEST.title} · {PRIEST.location}
         </p>
-        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2 font-display text-[10px] uppercase tracking-[0.35em] text-[#f5ecd7]/55">
-          <a href="#teachings" className="transition hover:text-[#dcd6cf]">Teachings</a>
-          <a href="#services" className="transition hover:text-[#dcd6cf]">Services</a>
-          <a href="#writings" className="transition hover:text-[#dcd6cf]">Writings</a>
-          <a href="#about" className="transition hover:text-[#dcd6cf]">About</a>
-          <a href="#contact" className="transition hover:text-[#dcd6cf]">Contact</a>
+        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2 font-caps text-[10px] uppercase tracking-[0.35em] text-[#ebdcc4]/55">
+          <a href="#teachings" className="transition hover:text-[#a8a09b]">Teachings</a>
+          <a href="#services" className="transition hover:text-[#a8a09b]">Services</a>
+          <a href="#writings" className="transition hover:text-[#a8a09b]">Writings</a>
+          <a href="#about" className="transition hover:text-[#a8a09b]">About</a>
+          <a href="#contact" className="transition hover:text-[#a8a09b]">Contact</a>
         </nav>
-        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-display text-[10px] uppercase tracking-[0.3em]" style={{ color: "#b84040" }}>
-          <a href={LINKS.contact} className="transition hover:text-[#dcd6cf]">Email</a>
-          <span className="text-[#f5ecd7]/20">·</span>
-          <a href={LINKS.discord} target="_blank" rel="noopener" className="transition hover:text-[#dcd6cf]">Discord</a>
-          <span className="text-[#f5ecd7]/20">·</span>
-          <a href={LINKS.nol} target="_blank" rel="noopener" className="transition hover:text-[#dcd6cf]">NOL</a>
-          <span className="text-[#f5ecd7]/20">·</span>
-          <a href={LINKS.lrs} target="_blank" rel="noopener" className="transition hover:text-[#dcd6cf]">LRS</a>
-          <span className="text-[#f5ecd7]/20">·</span>
-          <a href={LINKS.tools} target="_blank" rel="noopener" className="transition hover:text-[#dcd6cf]">Ritual Tools</a>
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-caps text-[10px] uppercase tracking-[0.3em]" style={{ color: "#c8977a" }}>
+          <a href={LINKS.contact} className="transition hover:text-[#a8a09b]">Email</a>
+          <span className="text-[#ebdcc4]/20">·</span>
+          <a href={LINKS.discord} target="_blank" rel="noopener" className="transition hover:text-[#a8a09b]">Discord</a>
+          <span className="text-[#ebdcc4]/20">·</span>
+          <a href={LINKS.nol} target="_blank" rel="noopener" className="transition hover:text-[#a8a09b]">NOL</a>
+          <span className="text-[#ebdcc4]/20">·</span>
+          <a href={LINKS.lrs} target="_blank" rel="noopener" className="transition hover:text-[#a8a09b]">LRS</a>
+          <span className="text-[#ebdcc4]/20">·</span>
+          <a href={LINKS.tools} target="_blank" rel="noopener" className="transition hover:text-[#a8a09b]">Ritual Tools</a>
         </div>
-        <p className="font-serif text-[11px] italic text-[#b84040]/60 mt-2">
+        <p className="font-script text-xl mt-3" style={{ color: "#c8977a" }}>
           {PRIEST.sigilGreeting}
         </p>
-        <p className="font-display text-[10px] uppercase tracking-[0.35em] text-[#f5ecd7]/30">
+        <p className="font-caps text-[10px] uppercase tracking-[0.35em] text-[#ebdcc4]/30">
           © {year} {PRIEST.name} · Under the Mother's Mark
         </p>
       </div>

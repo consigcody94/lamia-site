@@ -16,37 +16,50 @@ export function Hero() {
           className="absolute inset-0 candle"
           style={{
             background:
-              "radial-gradient(ellipse 45% 55% at 35% 55%, rgba(139,0,0,0.35), transparent 65%), radial-gradient(ellipse 25% 20% at 15% 72%, rgba(255,168,90,0.15), transparent 70%)",
+              "radial-gradient(ellipse 45% 55% at 35% 55%, rgba(114,31,53,0.35), transparent 65%), radial-gradient(ellipse 25% 20% at 15% 72%, rgba(186,107,58,0.15), transparent 70%)",
           }}
         />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16">
-        {/* PORTRAIT */}
+        {/* PORTRAIT — feathered into the page, no frame */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.4 }}
-          className="relative mx-auto w-full max-w-[520px]"
+          transition={{ duration: 1.6 }}
+          className="relative mx-auto w-full max-w-[560px]"
         >
+          {/* blood aura — drifts out behind the portrait */}
           <div
-            className="absolute -inset-3 rounded-[1.2rem] blur-2xl moon-pulse"
+            className="pointer-events-none absolute -inset-16 blur-3xl moon-pulse"
             style={{
               background:
-                "radial-gradient(ellipse at 40% 50%, rgba(139,0,0,0.6), rgba(90,0,0,0.25) 50%, transparent 80%)",
+                "radial-gradient(ellipse 55% 55% at 50% 50%, rgba(114,31,53,0.55), rgba(74,16,32,0.25) 45%, transparent 75%)",
             }}
           />
-          <div className="relative overflow-hidden rounded-[1rem] border border-[#b84040]/30 shadow-[0_30px_80px_-20px_rgba(139,0,0,0.7)]">
-            <Image
-              src="/os-lamia-portrait.png"
-              alt={`${PRIEST.name}, ${PRIEST.title}`}
-              width={1024}
-              height={1536}
-              priority
-              className="h-auto w-full object-cover"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0606]/40" />
-          </div>
+          {/* candle-warm underglow from the bottom-left (matching image's candles) */}
+          <div
+            className="pointer-events-none absolute -inset-10 blur-3xl candle"
+            style={{
+              background:
+                "radial-gradient(ellipse 35% 35% at 20% 60%, rgba(186,107,58,0.20), transparent 65%)",
+            }}
+          />
+          <Image
+            src="/os-lamia-portrait.png"
+            alt={`${PRIEST.name}, ${PRIEST.title}`}
+            width={1024}
+            height={1536}
+            priority
+            className="relative h-auto w-full"
+            style={{
+              maskImage:
+                "radial-gradient(ellipse 85% 92% at 50% 45%, #000 55%, rgba(0,0,0,0.8) 75%, transparent 100%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse 85% 92% at 50% 45%, #000 55%, rgba(0,0,0,0.8) 75%, transparent 100%)",
+              filter: "drop-shadow(0 30px 50px rgba(114,31,53,0.5))",
+            }}
+          />
         </motion.div>
 
         {/* TITLE BLOCK */}
@@ -55,8 +68,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-display text-[11px] uppercase tracking-[0.55em] md:text-xs"
-            style={{ color: "#b84040" }}
+            className="font-caps text-[11px] uppercase tracking-[0.55em] md:text-xs"
+            style={{ color: "#c8977a" }}
           >
             ⚭ {PRIEST.location} ⚭
           </motion.p>
@@ -71,7 +84,7 @@ export function Hero() {
               className="bg-clip-text text-transparent"
               style={{
                 backgroundImage:
-                  "linear-gradient(180deg, #f5ecd7 0%, #e8a8a8 30%, #b84040 60%, #5a0000 100%)",
+                  "linear-gradient(180deg, #ebdcc4 0%, #e4b89c 30%, #c8977a 60%, #4a1020 100%)",
               }}
             >
               High Priest
@@ -85,7 +98,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.55 }}
             className="mt-6 font-display text-base uppercase tracking-[0.4em] md:text-lg"
-            style={{ color: "#dcd6cf" }}
+            style={{ color: "#a8a09b" }}
           >
             {PRIEST.name}
           </motion.p>
@@ -94,7 +107,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.7 }}
-            className="mt-6 max-w-xl font-serif text-base italic leading-relaxed text-[#f5ecd7]/80 md:text-lg"
+            className="mt-6 max-w-xl font-serif text-base italic leading-relaxed text-[#ebdcc4]/80 md:text-lg"
           >
             {PRIEST.tagline}
           </motion.p>
@@ -103,7 +116,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.85 }}
-            className="mt-4 max-w-xl font-serif text-base leading-relaxed text-[#f5ecd7]/70"
+            className="mt-4 max-w-xl font-serif text-base leading-relaxed text-[#ebdcc4]/70"
           >
             {PRIEST.shortBio}
           </motion.p>
@@ -116,19 +129,19 @@ export function Hero() {
           >
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-3 rounded-full border px-8 py-3.5 font-display text-xs uppercase tracking-[0.35em] shadow-[0_0_40px_-10px_rgba(139,0,0,0.9)] transition"
+              className="inline-flex items-center justify-center gap-3 rounded-full border px-8 py-3.5 font-caps text-xs uppercase tracking-[0.35em] shadow-[0_0_40px_-10px_rgba(114,31,53,0.9)] transition"
               style={{
-                borderColor: "rgba(184,64,64,0.7)",
+                borderColor: "rgba(200,151,122,0.7)",
                 background:
-                  "linear-gradient(180deg, rgba(139,0,0,0.35), rgba(90,0,0,0.35))",
-                color: "#f5ecd7",
+                  "linear-gradient(180deg, rgba(114,31,53,0.35), rgba(74,16,32,0.35))",
+                color: "#ebdcc4",
               }}
             >
-              🕯️ Seek Counsel
+              ☾ Seek Counsel
             </a>
             <a
               href="#teachings"
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-red-950/50 bg-black/40 px-8 py-3.5 font-display text-xs uppercase tracking-[0.35em] text-[#f5ecd7]/80 transition hover:border-[#b84040]/60 hover:text-[#dcd6cf]"
+              className="inline-flex items-center justify-center gap-3 rounded-full border border-red-950/50 bg-black/40 px-8 py-3.5 font-caps text-xs uppercase tracking-[0.35em] text-[#ebdcc4]/80 transition hover:border-[#c8977a]/60 hover:text-[#a8a09b]"
             >
               Teachings of Lilith ↓
             </a>
@@ -138,13 +151,14 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2, delay: 1.6 }}
-            className="mt-10 font-serif text-[10px] italic tracking-[0.3em] text-[#b84040]/70"
+            className="mt-10 font-script text-2xl tracking-normal md:text-3xl"
+            style={{ color: "#c8977a" }}
           >
             {PRIEST.sigilGreeting}
           </motion.p>
 
-          <div className="mt-2 text-[9px] uppercase tracking-[0.3em] text-[#f5ecd7]/30">
-            — traditional invocation of Lilith
+          <div className="mt-2 font-caps text-[9px] uppercase tracking-[0.35em] text-[#ebdcc4]/35">
+            ☾ traditional invocation of Lilith ☾
           </div>
         </div>
       </div>

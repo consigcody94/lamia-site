@@ -1,55 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0606;
-  --foreground: #f5ecd7;
-  --blood: #8b0000;
-  --blood-deep: #5a0000;
-  --blood-soft: #b84040;
-  --candle: #ffa85a;
-  --moonlight: #dcd6cf;
-  --gold: #d4af37;
+  --background: #0d0709;
+  --foreground: #ebdcc4;
+
+  /* Palette: Lilith illuminated manuscript */
+  --wine: #721f35;            /* primary — deep burgundy */
+  --wine-deep: #4a1020;       /* shadow wine */
+  --wine-soft: #a8425a;       /* accent wine */
+  --rose-gold: #c8977a;       /* feminine accent */
+  --rose-gold-light: #e4b89c; /* highlight */
+  --ember: #ba6b3a;           /* warm amber candlelight */
+  --moonstone: #a8a09b;       /* cool silver */
+  --parchment: #ebdcc4;       /* body text warm cream */
+  --parchment-dim: #c9b89a;   /* secondary text */
+  --ink: #1c0f11;             /* dark ink */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-serif);
-  --font-serif: var(--font-serif);
+  --font-sans: var(--font-display);
+  --font-serif: var(--font-display);
   --font-display: var(--font-display);
+  --font-caps: var(--font-caps);
+  --font-script: var(--font-script);
 }
 
 html, body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-serif), "EB Garamond", Georgia, serif;
+  font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
 }
 
 body {
   background-image:
-    radial-gradient(ellipse at 15% 10%, rgba(139, 0, 0, 0.22), transparent 55%),
-    radial-gradient(ellipse at 85% 90%, rgba(139, 0, 0, 0.12), transparent 55%),
-    radial-gradient(ellipse at 50% 100%, rgba(255, 168, 90, 0.05), transparent 70%),
-    linear-gradient(180deg, #0a0606 0%, #040202 100%);
+    radial-gradient(ellipse at 18% 12%, rgba(114, 31, 53, 0.28), transparent 55%),
+    radial-gradient(ellipse at 82% 88%, rgba(186, 107, 58, 0.10), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(200, 151, 122, 0.05), transparent 70%),
+    linear-gradient(180deg, #0d0709 0%, #050202 100%);
   background-attachment: fixed;
 }
 
 h1, h2, h3, h4, .font-display {
-  font-family: var(--font-display), "Cinzel", Georgia, serif;
+  font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.font-caps {
+  font-family: var(--font-caps), "Cinzel", Georgia, serif;
+}
+
+.font-script {
+  font-family: var(--font-script), "Pinyon Script", "Brush Script MT", cursive;
 }
 
 ::selection {
-  background: rgba(139, 0, 0, 0.5);
+  background: rgba(114, 31, 53, 0.55);
   color: #fff;
 }
 
 html { scroll-behavior: smooth; }
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0a0606; }
-::-webkit-scrollbar-thumb { background: #3a1010; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #5a1818; }
+::-webkit-scrollbar-track { background: #0d0709; }
+::-webkit-scrollbar-thumb { background: #3a141f; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #5a1c2f; }
 
+/* ambient animations */
 @keyframes candle-flicker {
   0%, 100% { opacity: 0.9; filter: brightness(1); }
   30%  { opacity: 1; filter: brightness(1.08); }

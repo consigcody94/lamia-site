@@ -26,12 +26,12 @@ export function TopNav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all ${
-        scrolled ? "bg-[#0a0606]/85 backdrop-blur-md border-b border-red-950/40" : "bg-transparent"
+        scrolled ? "bg-[#0d0709]/85 backdrop-blur-md border-b border-red-950/40" : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <Link href="#top" className="flex items-center gap-2">
-          <span className="font-display text-xs uppercase tracking-[0.4em]" style={{ color: "#b84040" }}>
+          <span className="font-caps text-xs uppercase tracking-[0.4em]" style={{ color: "#c8977a" }}>
             ⚭ Os Lamia ⚭
           </span>
         </Link>
@@ -40,7 +40,7 @@ export function TopNav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-full px-3 py-2 font-display text-[10px] uppercase tracking-[0.3em] text-[#f5ecd7]/60 transition hover:bg-red-900/20 hover:text-[#dcd6cf]"
+                className="rounded-full px-3 py-2 font-caps text-[10px] uppercase tracking-[0.3em] text-[#ebdcc4]/60 transition hover:bg-red-900/20 hover:text-[#a8a09b]"
               >
                 {l.label}
               </a>
@@ -49,7 +49,7 @@ export function TopNav() {
         </ul>
         <a
           href={LINKS.contact}
-          className="hidden rounded-full border border-[#b84040]/50 bg-red-950/20 px-5 py-2 font-display text-[10px] uppercase tracking-[0.3em] text-[#dcd6cf] transition hover:border-[#b84040] hover:bg-red-950/30 md:block"
+          className="hidden rounded-full border border-[#c8977a]/50 bg-red-950/20 px-5 py-2 font-caps text-[10px] uppercase tracking-[0.3em] text-[#a8a09b] transition hover:border-[#c8977a] hover:bg-red-950/30 md:block"
         >
           Seek Counsel
         </a>
@@ -57,19 +57,19 @@ export function TopNav() {
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
-          className="lg:hidden rounded border border-red-950/40 px-3 py-1.5 text-[#dcd6cf]"
+          className="lg:hidden rounded border border-red-950/40 px-3 py-1.5 text-[#a8a09b]"
         >
           {open ? "✕" : "☰"}
         </button>
       </nav>
       {open && (
-        <ul className="flex flex-col border-t border-red-950/40 bg-[#0a0606]/95 px-4 py-3 lg:hidden">
+        <ul className="flex flex-col border-t border-red-950/40 bg-[#0d0709]/95 px-4 py-3 lg:hidden">
           {NAV.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 font-display text-xs uppercase tracking-[0.3em] text-[#f5ecd7]/70"
+                className="block py-2 font-caps text-xs uppercase tracking-[0.3em] text-[#ebdcc4]/70"
               >
                 {l.label}
               </a>
@@ -79,7 +79,7 @@ export function TopNav() {
             <a
               href={LINKS.contact}
               onClick={() => setOpen(false)}
-              className="mt-2 block rounded border border-[#b84040]/50 bg-red-950/20 py-2 text-center font-display text-xs uppercase tracking-[0.3em] text-[#dcd6cf]"
+              className="mt-2 block rounded border border-[#c8977a]/50 bg-red-950/20 py-2 text-center font-caps text-xs uppercase tracking-[0.3em] text-[#a8a09b]"
             >
               Seek Counsel
             </a>
