@@ -30,12 +30,12 @@ export function Hero() {
           transition={{ duration: 1.4 }}
           className="relative mx-auto w-full max-w-[480px]"
         >
-          <PortraitFrame className="px-6 pb-8 pt-4 md:px-8 md:pb-10 md:pt-5">
+          <PortraitFrame className="p-2 md:p-3">
             <Image
-              src="/os-lamia-cutout.png"
+              src="/os-lamia-portrait.png"
               alt={`${PRIEST.name}, ${PRIEST.title}`}
               width={1024}
-              height={1516}
+              height={1536}
               priority
               className="relative block h-auto w-full"
             />
