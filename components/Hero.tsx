@@ -22,43 +22,29 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16">
-        {/* PORTRAIT — feathered into the page, no frame */}
+        {/* PORTRAIT — background ML-removed, subject only, no glow over figure */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.6 }}
-          className="relative mx-auto w-full max-w-[560px]"
+          transition={{ duration: 1.4 }}
+          className="relative mx-auto w-full max-w-[520px]"
         >
-          {/* blood aura — drifts out behind the portrait */}
+          {/* Soft ambient glow at the very bottom only, as if the figure stands in wine-light.
+              Intentionally below the figure's feet so it never sits on top of the subject. */}
           <div
-            className="pointer-events-none absolute -inset-16 blur-3xl moon-pulse"
+            className="pointer-events-none absolute -bottom-4 left-1/2 h-24 w-[90%] -translate-x-1/2 blur-3xl"
             style={{
               background:
-                "radial-gradient(ellipse 55% 55% at 50% 50%, rgba(114,31,53,0.55), rgba(74,16,32,0.25) 45%, transparent 75%)",
-            }}
-          />
-          {/* candle-warm underglow from the bottom-left (matching image's candles) */}
-          <div
-            className="pointer-events-none absolute -inset-10 blur-3xl candle"
-            style={{
-              background:
-                "radial-gradient(ellipse 35% 35% at 20% 60%, rgba(186,107,58,0.20), transparent 65%)",
+                "radial-gradient(ellipse 70% 100% at 50% 100%, rgba(114,31,53,0.55), rgba(74,16,32,0.25) 55%, transparent 85%)",
             }}
           />
           <Image
-            src="/os-lamia-portrait.png"
+            src="/os-lamia-cutout.png"
             alt={`${PRIEST.name}, ${PRIEST.title}`}
             width={1024}
             height={1536}
             priority
-            className="relative h-auto w-full"
-            style={{
-              maskImage:
-                "radial-gradient(ellipse 85% 92% at 50% 45%, #000 55%, rgba(0,0,0,0.8) 75%, transparent 100%)",
-              WebkitMaskImage:
-                "radial-gradient(ellipse 85% 92% at 50% 45%, #000 55%, rgba(0,0,0,0.8) 75%, transparent 100%)",
-              filter: "drop-shadow(0 30px 50px rgba(114,31,53,0.5))",
-            }}
+            className="relative block h-auto w-full"
           />
         </motion.div>
 
