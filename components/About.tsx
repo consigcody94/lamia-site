@@ -134,10 +134,7 @@ export function About() {
             <p>
               At eighteen I was ordained a High Priest of the Greater Church of Lucifer at a
               gathering in Old Town Spring, Texas. The Greater Church of Lucifer was founded in
-              2013 by Michael W. Ford and would open its public temple on the eve of Samhain,
-              October 30 of 2015. My consecration took place during that formative window, in the
-              same Houston-suburb circle that became the first openly Luciferian temple in the
-              United States. It was there I stood in the same room with{" "}
+              2013 under the joint leadership of four heads: Michael W. Ford, Hope Marie Ford,{" "}
               <a
                 href={LINKS.nol}
                 target="_blank"
@@ -147,8 +144,11 @@ export function About() {
               >
                 Jeremy Crow
               </a>
-              , with Michael W. Ford, and with Jacob No, and watched the Left Hand Path in America
-              name itself out loud.
+              , and Jacob No. Its public temple would open on the eve of Samhain, October 30 of
+              2015. My consecration took place during that formative window, in the
+              Houston-suburb circle that became the first openly Luciferian temple in the United
+              States. I stood in the same room with all four of them and watched the Left Hand
+              Path in America name itself out loud.
             </p>
             <p>
               The temple in Old Town Spring was forced to close in 2016 under the weight of local
@@ -158,12 +158,12 @@ export function About() {
             </p>
           </div>
 
-          {/* Lineage panel */}
+          {/* Lineage panel — the four heads of GCOL */}
           <div className="mt-10 border-t pt-8" style={{ borderColor: "rgba(200,151,122,0.25)" }}>
             <p className="font-caps text-[10px] uppercase tracking-[0.45em]" style={{ color: "#c8977a" }}>
-              ☾ The Circle I Was Initiated Among ☾
+              ☾ The Four Heads of GCOL ☾
             </p>
-            <div className="mt-5 grid gap-5 md:grid-cols-3">
+            <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {LINEAGE.map((f) => (
                 <div
                   key={f.name}

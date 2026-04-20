@@ -18,21 +18,27 @@ export interface LineageFigure {
 export const LINEAGE: LineageFigure[] = [
   {
     name: "Michael W. Ford",
-    role: "Co-founder, Greater Church of Lucifer · Founder, The Order of Phosphorus",
+    role: "Co-Head of GCOL · Founder, The Order of Phosphorus",
     significance:
-      "Author of Wisdom of Eosphoros and the principal architect of the Luciferian Tradition as a formal current. Our introduction was the first door.",
+      "Author of Wisdom of Eosphoros and the principal architect of the modern Luciferian Tradition as a formal current. Our introduction was the first door.",
     link: "https://en.wikipedia.org/wiki/Michael_W._Ford",
   },
   {
+    name: "Hope Marie Ford",
+    role: "Co-Head of GCOL · Co-President with Michael W. Ford",
+    significance:
+      "Co-president of the Greater Church of Lucifer and the feminine half of its founding presidium. Held the steady ground while the outer world made noise.",
+  },
+  {
     name: "Jeremy Crow",
-    role: "Former Head of the Ordo Luciferi and the Greater Church of Lucifer · Founder, NOL and LRS",
+    role: "Co-Head of GCOL · Founder, NOL and LRS",
     significance:
       "Ordained Priest, lodge-keeper, and the steadiest hand in the post-GCOL diaspora. Teacher, collaborator, and living lineage in the Gnostic Luciferian line.",
     link: "https://www.jeremycrow.com/",
   },
   {
     name: "Jacob No · Jacob McKelvy",
-    role: "Co-founder, Greater Church of Lucifer (2013–2017)",
+    role: "Co-Head of GCOL (2013–2017) · Archon",
     significance:
       "Archon of the early GCOL and co-architect of its public face. Walked another path in 2017, but his print on the order's founding years is historical record.",
   },
