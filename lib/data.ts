@@ -59,9 +59,13 @@ export const BLACK_WATER = {
     "Before the Library was given to me, before the travels, before the temple in Old Town Spring, there was the water. It was black because it was deep, and it was deep because she had been there first. I went under, and I came up hearing the voice of the Night Mother for the first time. Everything that followed is the echo of that moment.",
 } as const;
 
+export const PRIEST_EMAIL = "os@lilitu.org";
+
 export const LINKS = {
   discord: "https://discord.gg/GvjsS4C",
-  contact: "mailto:oslamia.priest@gmail.com",
+  contact: `mailto:${PRIEST_EMAIL}`,
+  email: PRIEST_EMAIL,
+  mail: "/mail",
   instagram: "https://instagram.com/",
   bluesky: "https://bsky.app/",
   nol: "https://nol-site.vercel.app",
