@@ -6,6 +6,7 @@ import { Writings } from "@/components/Writings";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { OrnamentDivider } from "@/components/Ornaments";
 
 export default function Home() {
   return (
@@ -13,10 +14,15 @@ export default function Home() {
       <TopNav />
       <main>
         <Hero />
+        <OrnamentDivider className="py-6" />
         <Teachings />
+        <OrnamentDivider className="py-6" />
         <Services />
+        <OrnamentDivider className="py-6" />
         <Writings />
+        <OrnamentDivider className="py-6" />
         <About />
+        <OrnamentDivider className="py-6" />
         <Contact />
       </main>
       <Footer />

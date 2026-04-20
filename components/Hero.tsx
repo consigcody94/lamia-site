@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { LINKS, PRIEST } from "@/lib/data";
 import { PortraitFrame } from "./PortraitFrame";
+import { Serpent } from "./Ornaments";
 
 export function Hero() {
   return (
@@ -20,6 +21,9 @@ export function Hero() {
               "radial-gradient(ellipse 45% 55% at 35% 55%, rgba(114,31,53,0.35), transparent 65%), radial-gradient(ellipse 25% 20% at 15% 72%, rgba(186,107,58,0.15), transparent 70%)",
           }}
         />
+        {/* Flanking serpents on desktop, low opacity blend */}
+        <Serpent className="pointer-events-none absolute left-4 top-1/2 hidden -translate-y-1/2 opacity-25 xl:block" size={70} />
+        <Serpent className="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 opacity-25 xl:block" size={70} flip />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16">

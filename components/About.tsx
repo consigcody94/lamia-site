@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BLACK_WATER, LINEAGE, LINEAGE_CHAPTER, LINKS, PRIEST } from "@/lib/data";
+import { LilithSigil } from "./Ornaments";
 
 export function About() {
   return (
@@ -9,6 +10,9 @@ export function About() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c8977a]/40 to-transparent" />
       <div className="mx-auto max-w-5xl">
         <div className="mb-12 text-center">
+          <div className="mb-6 flex justify-center">
+            <LilithSigil size={80} className="moon-pulse" />
+          </div>
           <p className="font-caps text-[11px] uppercase tracking-[0.55em]" style={{ color: "#c8977a" }}>
             ☾ The One Who Keeps the Door ☾
           </p>

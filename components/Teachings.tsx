@@ -2,14 +2,16 @@
 
 import { motion } from "framer-motion";
 import { TEACHINGS } from "@/lib/data";
+import { SectionCrest } from "./Ornaments";
 
 export function Teachings() {
   return (
     <section id="teachings" className="relative px-4 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
+          <SectionCrest className="mb-6" />
           <p className="font-caps text-[11px] uppercase tracking-[0.55em]" style={{ color: "#c8977a" }}>
-            ⚭ The Teachings of Lilith ⚭
+            ☾ The Teachings of Lilith ☾
           </p>
           <h2 className="mt-4 font-display text-4xl font-semibold tracking-wide md:text-5xl">
             <span

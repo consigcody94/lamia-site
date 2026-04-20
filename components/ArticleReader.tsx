@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Writing } from "@/lib/data";
+import { CrescentMoon } from "./Ornaments";
 
 export function ArticleReader({ writing }: { writing: Writing }) {
   return (
@@ -78,6 +79,13 @@ export function ArticleReader({ writing }: { writing: Writing }) {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: i * 0.04 }}
           >
+            {i > 0 && (
+              <div className="mb-10 flex items-center justify-center gap-3" aria-hidden>
+                <span className="h-px w-24 bg-gradient-to-r from-transparent to-[#c8977a]/40" />
+                <CrescentMoon size={18} />
+                <span className="h-px w-24 bg-gradient-to-l from-transparent to-[#c8977a]/40" />
+              </div>
+            )}
             {s.heading && (
               <h2
                 className="mb-5 font-display text-2xl font-semibold md:text-3xl"
