@@ -22,27 +22,18 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16">
-        {/* PORTRAIT — background ML-removed, subject only, no glow over figure */}
+        {/* PORTRAIT — subject-tight cutout, no box, no glow over the figure */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.4 }}
-          className="relative mx-auto w-full max-w-[520px]"
+          className="relative mx-auto w-full max-w-[480px]"
         >
-          {/* Soft ambient glow at the very bottom only, as if the figure stands in wine-light.
-              Intentionally below the figure's feet so it never sits on top of the subject. */}
-          <div
-            className="pointer-events-none absolute -bottom-4 left-1/2 h-24 w-[90%] -translate-x-1/2 blur-3xl"
-            style={{
-              background:
-                "radial-gradient(ellipse 70% 100% at 50% 100%, rgba(114,31,53,0.55), rgba(74,16,32,0.25) 55%, transparent 85%)",
-            }}
-          />
           <Image
             src="/os-lamia-cutout.png"
             alt={`${PRIEST.name}, ${PRIEST.title}`}
             width={1024}
-            height={1105}
+            height={1516}
             priority
             className="relative block h-auto w-full"
           />

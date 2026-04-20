@@ -85,12 +85,28 @@ export function About() {
           </h3>
           <div className="mt-6 flex flex-col gap-5 font-serif text-lg leading-[1.9] text-[#ebdcc4]/85">
             <p>
-              As a teenager I was given the Library. Not the one you find on a shelf or a search
-              bar, but the one that is handed down when an older practitioner recognizes that
-              someone younger has already been claimed by the work and simply needs the
-              architecture. Texts, manuscripts, xeroxed rites, private correspondence, marginalia
-              in other people&apos;s hands. The kind of inheritance that arrives wrapped in a single
-              sentence: this is yours now, do not waste it.
+              The Library is what I call the condition of knowing, as a teenager and then a young
+              man, what a person my age had no business knowing. Names before I had read them.
+              Rites I had never been taught. Sigils rising from the back of a notebook in a hand
+              that felt borrowed. Dream-instruction that arrived with the cadence of a teacher
+              already mid-sentence. It was not scholarship. It was transmission.
+            </p>
+            <p>
+              This is old work for her. In the Zohar she is the consort of Samael and ruler of
+              the Sitra Achra, the Other Side, teaching the arts the dayside tradition refused to
+              keep. In the Alphabet of Ben-Sira she holds a Name that power could not take back.
+              Her daughters, the Lilim, are described across medieval Jewish mysticism and modern
+              Luciferian writings as keepers of lunar and forbidden wisdom, awakeners of the
+              chosen, the ones who come to the young in dreams and mark them. Michael W. Ford
+              names her plainly in <em>The Bible of the Adversary</em> as the <em>Awakener</em>{" "}
+              of the Luciferian spark in her initiates. Every tradition that has touched her
+              honestly has said the same thing in different words: she chooses her priests young,
+              and she teaches them in their sleep before she ever introduces them to a lodge.
+            </p>
+            <p>
+              That was my Library. Physical texts and manuscripts accumulated later, handed down
+              by elders who recognized in me the fingerprints of her visits. But the gnosis came
+              first, and the books arrived as confirmation.
             </p>
             <p>
               I did not waste it. I walked across the country with it.
@@ -125,14 +141,26 @@ export function About() {
           </p>
           <div className="mt-6 flex flex-col gap-5 font-serif text-lg leading-[1.9] text-[#ebdcc4]/85">
             <p>
-              The years between the Library and the Lodge were spent on the road. I went looking
-              for the others. Not books about the others, the others themselves. I found them in
-              kitchens and back rooms and conference halls in a dozen states, from the Gulf coast
-              up through Appalachia, across to the desert southwest, and home again. Every
-              meeting added a word to a vocabulary I did not yet know I was assembling.
+              Most of my youth, up until eighteen, was spent on the road. I was looking for the
+              others. Not books about the others, the others themselves. I found them in kitchens
+              and back rooms and conference halls in a dozen states, from the Gulf coast up
+              through Appalachia, across to the desert southwest, and home again. Every meeting
+              added a word to a vocabulary I did not yet know I was assembling.
             </p>
             <p>
-              At eighteen I was ordained a High Priest of the Greater Church of Lucifer at a
+              A pattern followed me across those miles that I could not explain at the time. In
+              gas stations, at counters, in airport terminals, in the back rows of gatherings,
+              strangers would catch my eye, hold it a beat longer than politeness allows, and
+              then offer something: a ride, a meal, a place to sleep. More often than not they
+              would go further, lowering their voice and telling me a secret they had never told
+              anyone, or a piece of a teaching they had carried alone and needed to hand to
+              someone. I learned later that this is an old motif. The ones marked by the Dark
+              Mother carry a resonance that others feel without knowing why, and the world
+              arranges aid around them. I did not earn it. I received it, and the Library
+              doubled in every city.
+            </p>
+            <p>
+              At eighteen I was initiated as a High Priest of the Greater Church of Lucifer at a
               gathering in Old Town Spring, Texas. The Greater Church of Lucifer was founded in
               2013 under the joint leadership of four heads: Michael W. Ford, Hope Marie Ford,{" "}
               <a
@@ -145,7 +173,7 @@ export function About() {
                 Jeremy Crow
               </a>
               , and Jacob No. Its public temple would open on the eve of Samhain, October 30 of
-              2015. My consecration took place during that formative window, in the
+              2015. My initiation took place during that formative window, in the
               Houston-suburb circle that became the first openly Luciferian temple in the United
               States. I stood in the same room with all four of them and watched the Left Hand
               Path in America name itself out loud.
