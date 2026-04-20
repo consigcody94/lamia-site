@@ -4,8 +4,53 @@ export const PRIEST = {
   location: "Washington · DMV Area",
   tagline: "Servant of the Night Mother. Keeper of the Red Current.",
   shortBio:
-    "High Priest in the lineage of Lilith: the Night Mother, First Sovereign, and patroness of the untamed soul. I teach, counsel, and facilitate rites for seekers walking the Left Hand Path in the American capital and beyond.",
+    "High Priest of Lilith, initiated in the founding circle of the Greater Church of Lucifer in Old Town Spring, Texas. Initiated at 18, trained among the architects of modern American Luciferianism, and anchored in the Black Water current of the Dark Mother. Private counsel and ritual facilitation from Washington DMV.",
   sigilGreeting: "Renich · tasa · uberaca · biasa · icar · Lilith",
+} as const;
+
+export interface LineageFigure {
+  name: string;
+  role: string;
+  significance: string;
+  link?: string;
+}
+
+export const LINEAGE: LineageFigure[] = [
+  {
+    name: "Michael W. Ford",
+    role: "Co-founder, Greater Church of Lucifer · Founder, The Order of Phosphorus",
+    significance:
+      "Author of Wisdom of Eosphoros and the principal architect of the Luciferian Tradition as a formal current. Our introduction was the first door.",
+    link: "https://en.wikipedia.org/wiki/Michael_W._Ford",
+  },
+  {
+    name: "Jeremy Crow",
+    role: "Former Head of the Ordo Luciferi and the Greater Church of Lucifer · Founder, NOL and LRS",
+    significance:
+      "Ordained Priest, lodge-keeper, and the steadiest hand in the post-GCOL diaspora. Teacher, collaborator, and living lineage in the Gnostic Luciferian line.",
+    link: "https://www.jeremycrow.com/",
+  },
+  {
+    name: "Jacob No · Jacob McKelvy",
+    role: "Co-founder, Greater Church of Lucifer (2013–2017)",
+    significance:
+      "Archon of the early GCOL and co-architect of its public face. Walked another path in 2017, but his print on the order's founding years is historical record.",
+  },
+];
+
+export const LINEAGE_CHAPTER = {
+  title: "The Greater Church of Lucifer",
+  locator: "Old Town Spring · Houston · Texas",
+  openedDate: "October 30, 2015",
+  renamedTo: "Assembly of Light Bearers",
+  summary:
+    "Founded 2013 by Michael W. Ford. The first Luciferian temple in the United States open to the public, located in Old Town Spring, a suburb of Houston. The church held gatherings in the years preceding the temple's opening, where early initiates were recognized and consecrated. After the temple was forced to close in 2016, the order continued under its new name, the Assembly of Light Bearers.",
+} as const;
+
+export const BLACK_WATER = {
+  title: "The Black Water Baptism",
+  body:
+    "Before the Library was given to me, before the travels, before the temple in Old Town Spring, there was the water. It was black because it was deep, and it was deep because she had been there first. I went under, and I came up hearing the voice of the Night Mother for the first time. Everything that followed is the echo of that moment.",
 } as const;
 
 export const LINKS = {
