@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 import { LINKS } from "@/lib/data";
 
 const NAV = [
-  { href: "#teachings", label: "Teachings" },
-  { href: "#services", label: "Services" },
-  { href: "#writings", label: "Writings" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#teachings", label: "Teachings" },
+  { href: "/#services", label: "Services" },
+  { href: "/#writings", label: "Writings" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
+  { href: "/mail", label: "Mail" },
 ];
 
 export function TopNav() {
