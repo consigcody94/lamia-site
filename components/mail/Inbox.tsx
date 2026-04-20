@@ -24,7 +24,7 @@ export function Inbox({ email }: { email: string }) {
     setRefreshing(true);
     setError(null);
     try {
-      const res = await fetch("/api/mail/messages");
+      const res = await fetch("/api/oracle/messages");
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || `Error ${res.status}`);
@@ -44,7 +44,7 @@ export function Inbox({ email }: { email: string }) {
   }, []);
 
   const logout = async () => {
-    await fetch("/api/mail/logout", { method: "POST" });
+    await fetch("/api/oracle/logout", { method: "POST" });
     window.location.reload();
   };
 
@@ -53,7 +53,7 @@ export function Inbox({ email }: { email: string }) {
       <div className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b pb-6" style={{ borderColor: "rgba(200,151,122,0.25)" }}>
         <div>
           <p className="font-caps text-[10px] uppercase tracking-[0.45em]" style={{ color: "#c8977a" }}>
-            ☾ Signed in as ☾
+            ☾ Words the Tree Has Carried ☾
           </p>
           <p className="mt-1 font-display text-xl" style={{ color: "#ebdcc4" }}>
             {email}
@@ -71,7 +71,7 @@ export function Inbox({ email }: { email: string }) {
               background: "rgba(114,31,53,0.15)",
             }}
           >
-            {refreshing ? "Listening…" : "↻ Refresh"}
+            {refreshing ? "Listening…" : "↻ Listen Again"}
           </button>
           <button
             type="button"
@@ -82,7 +82,7 @@ export function Inbox({ email }: { email: string }) {
               color: "#ebdcc4",
             }}
           >
-            Close Door
+            Leave the Grove
           </button>
         </div>
       </div>
@@ -94,11 +94,11 @@ export function Inbox({ email }: { email: string }) {
       )}
 
       {items === null && !error && (
-        <p className="py-10 text-center font-serif italic text-[#ebdcc4]/60">Listening at the door…</p>
+        <p className="py-10 text-center font-serif italic text-[#ebdcc4]/60">Listening at the roots…</p>
       )}
 
       {items !== null && items.length === 0 && !error && (
-        <p className="py-10 text-center font-serif italic text-[#ebdcc4]/60">The inbox is empty. No word has arrived yet.</p>
+        <p className="py-10 text-center font-serif italic text-[#ebdcc4]/60">The tree is silent. No word has come through yet.</p>
       )}
 
       <ul className="flex flex-col gap-2">
@@ -110,7 +110,7 @@ export function Inbox({ email }: { email: string }) {
             transition={{ duration: 0.4, delay: i * 0.02 }}
           >
             <Link
-              href={`/mail/${m.uid}`}
+              href={`/oracle/${m.uid}`}
               className={`group grid grid-cols-[auto_1fr_auto] items-start gap-4 rounded-lg border px-4 py-3 transition hover:border-[#c8977a]/60 ${
                 m.seen ? "opacity-75" : ""
               }`}

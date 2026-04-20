@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { IMAP_PRESETS } from "@/lib/mail/config";
-import { LilithSigil } from "@/components/Ornaments";
+import { HuluppuTree } from "@/components/HuluppuTree";
 import { PRIEST_EMAIL } from "@/lib/data";
 
 export function LoginForm({ onSuccess }: { onSuccess: () => void }) {
@@ -37,7 +37,7 @@ export function LoginForm({ onSuccess }: { onSuccess: () => void }) {
     setError(null);
     setSubmitting(true);
     try {
-      const res = await fetch("/api/mail/login", {
+      const res = await fetch("/api/oracle/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password, imapHost, imapPort, smtpHost, smtpPort }),
@@ -62,11 +62,11 @@ export function LoginForm({ onSuccess }: { onSuccess: () => void }) {
       className="mx-auto max-w-md"
     >
       <div className="text-center">
-        <div className="mb-6 flex justify-center">
-          <LilithSigil size={96} className="moon-pulse" />
+        <div className="mb-4 flex justify-center">
+          <HuluppuTree size={140} className="moon-pulse" />
         </div>
         <p className="font-caps text-[10px] uppercase tracking-[0.5em]" style={{ color: "#c8977a" }}>
-          ☾ The Threshold ☾
+          ☾ The Grove ☾
         </p>
         <h1 className="mt-4 font-display text-4xl font-semibold tracking-wider md:text-5xl">
           <span
@@ -76,12 +76,13 @@ export function LoginForm({ onSuccess }: { onSuccess: () => void }) {
                 "linear-gradient(180deg, #ebdcc4 0%, #e4b89c 30%, #c8977a 60%, #4a1020 100%)",
             }}
           >
-            Enter Your Mail
+            Speak to the Oracle
           </span>
         </h1>
         <p className="mt-4 font-serif text-sm italic text-[#ebdcc4]/60">
-          Your credentials are verified directly against your mail provider and stored only in an
-          encrypted session cookie. This site never logs them.
+          The Huluppu tree holds her house in the trunk. Name yourself at the roots and she will
+          receive the words the tree has carried. Your credentials are verified against the server
+          directly and stored only in an encrypted session cookie.
         </p>
       </div>
 
@@ -201,7 +202,7 @@ export function LoginForm({ onSuccess }: { onSuccess: () => void }) {
               boxShadow: "0 0 40px -10px rgba(114,31,53,0.9)",
             }}
           >
-            {submitting ? "Opening the Door…" : "☾ Enter"}
+            {submitting ? "Approaching the Tree…" : "☾ Enter the Grove"}
           </button>
         </div>
       </form>

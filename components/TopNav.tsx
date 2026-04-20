@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LINKS } from "@/lib/data";
+import { HuluppuTree } from "./HuluppuTree";
 
 const NAV = [
   { href: "/#teachings", label: "Teachings" },
@@ -10,7 +11,6 @@ const NAV = [
   { href: "/#writings", label: "Writings" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
-  { href: "/mail", label: "Mail" },
 ];
 
 export function TopNav() {
@@ -47,6 +47,17 @@ export function TopNav() {
               </a>
             </li>
           ))}
+          <li>
+            <Link
+              href="/oracle"
+              aria-label="Speak to the Oracle"
+              title="Speak to the Oracle"
+              className="group ml-2 flex h-11 w-8 items-center justify-center rounded-full transition hover:scale-110"
+              style={{ filter: "drop-shadow(0 0 8px rgba(200,151,122,0.5))" }}
+            >
+              <HuluppuTree size={30} compact />
+            </Link>
+          </li>
         </ul>
         <a
           href={LINKS.contact}
@@ -65,6 +76,19 @@ export function TopNav() {
       </nav>
       {open && (
         <ul className="flex flex-col border-t border-red-950/40 bg-[#0d0709]/95 px-4 py-3 lg:hidden">
+          <li className="flex justify-center pb-2">
+            <Link
+              href="/oracle"
+              onClick={() => setOpen(false)}
+              aria-label="Speak to the Oracle"
+              className="flex items-center gap-3"
+            >
+              <HuluppuTree size={40} compact />
+              <span className="font-caps text-[10px] uppercase tracking-[0.35em]" style={{ color: "#c8977a" }}>
+                Speak to the Oracle
+              </span>
+            </Link>
+          </li>
           {NAV.map((l) => (
             <li key={l.href}>
               <a

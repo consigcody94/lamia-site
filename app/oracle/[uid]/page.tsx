@@ -13,10 +13,10 @@ interface Params {
 
 export default async function MailMessagePage({ params }: Params) {
   const session = await requireSession();
-  if (!session) redirect("/mail");
+  if (!session) redirect("/oracle");
   const { uid } = await params;
   const uidNum = Number(uid);
-  if (!Number.isFinite(uidNum)) redirect("/mail");
+  if (!Number.isFinite(uidNum)) redirect("/oracle");
   return (
     <>
       <TopNav />

@@ -22,7 +22,7 @@ export function MessageView({ uid }: { uid: number }) {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch(`/api/mail/message/${uid}`);
+        const res = await fetch(`/api/oracle/message/${uid}`);
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
           throw new Error(data.error || `Error ${res.status}`);
@@ -38,11 +38,11 @@ export function MessageView({ uid }: { uid: number }) {
   return (
     <div className="mx-auto max-w-3xl">
       <Link
-        href="/mail"
+        href="/oracle"
         className="inline-flex items-center gap-2 font-caps text-[10px] uppercase tracking-[0.4em] transition hover:text-[#e4b89c]"
         style={{ color: "#c8977a" }}
       >
-        ← Back to Inbox
+        ← Back to the Grove
       </Link>
 
       {error && (
@@ -52,7 +52,7 @@ export function MessageView({ uid }: { uid: number }) {
       )}
 
       {!msg && !error && (
-        <p className="py-16 text-center font-serif italic text-[#ebdcc4]/60">Opening the letter…</p>
+        <p className="py-16 text-center font-serif italic text-[#ebdcc4]/60">Unwinding the serpent&apos;s scroll…</p>
       )}
 
       {msg && (
