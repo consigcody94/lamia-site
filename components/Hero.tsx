@@ -42,7 +42,7 @@ export function Hero() {
             src="/os-lamia-cutout.png"
             alt={`${PRIEST.name}, ${PRIEST.title}`}
             width={1024}
-            height={1536}
+            height={1105}
             priority
             className="relative block h-auto w-full"
           />
