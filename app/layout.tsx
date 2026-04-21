@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Pinyon_Script, Cinzel } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { JsonLd } from "@/components/JsonLd";
-import { siteGraph } from "@/lib/schema";
+import { siteGraph, profilePageSchema, allServicesSchema } from "@/lib/schema";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -61,6 +61,9 @@ export const metadata: Metadata = {
   category: "Religion & Spirituality",
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: "Lilitu · Os Lamia · Writings RSS" }],
+    },
   },
   openGraph: {
     type: "website",
@@ -120,7 +123,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${cormorant.variable} ${cinzel.variable} ${pinyon.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[#0d0709] text-[#ebdcc4]">
-        <JsonLd data={siteGraph()} />
+        <JsonLd data={[siteGraph(), profilePageSchema(), allServicesSchema()]} />
         {children}
         <Analytics />
       </body>

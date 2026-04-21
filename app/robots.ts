@@ -23,7 +23,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "Bingbot", allow: "/" },
       { userAgent: "DuckDuckBot", allow: "/" },
     ],
-    sitemap: "https://lilitu.org/sitemap.xml",
+    sitemap: ["https://lilitu.org/sitemap.xml", "https://lilitu.org/feed.xml"],
     host: "https://lilitu.org",
   };
 }

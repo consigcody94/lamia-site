@@ -275,6 +275,93 @@ export function breadcrumbSchema(crumbs: Crumb[]) {
   };
 }
 
+/* ───────── ProfilePage — Os Lamia's profile ───────── */
+export function profilePageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${SITE_URL}/#profilepage`,
+    url: SITE_URL,
+    name: "Os Lamia · High Priest of Lilith",
+    mainEntity: { "@id": ID.person },
+    dateCreated: "2026-01-01",
+    dateModified: new Date().toISOString().slice(0, 10),
+    inLanguage: "en",
+  };
+}
+
+/* ───────── Service — for each formal offering ───────── */
+export interface ServiceInput {
+  name: string;
+  description: string;
+  format?: string;
+  serviceType?: string;
+}
+
+export function serviceSchema(s: ServiceInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: s.name,
+    description: s.description,
+    serviceType: s.serviceType ?? "Spiritual counsel",
+    provider: { "@id": ID.person },
+    areaServed: { "@type": "Place", name: "Worldwide (video) and Washington DMV (in person)" },
+    audience: { "@type": "Audience", audienceType: "Seekers in the Lilith current" },
+    ...(s.format && { hoursAvailable: s.format }),
+  };
+}
+
+export function allServicesSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/#services`,
+    name: "Services offered by Os Lamia, High Priest of Lilith",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: serviceSchema({
+          name: "Private Counsel",
+          description: "One-on-one spiritual direction from within the Lilith current. For seekers navigating initiation, shadow work, vocational clarity, or thresholds where the old life will not hold and the new one has not yet formed.",
+          format: "60 or 90 minutes; video or in-person DMV",
+        }),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: serviceSchema({
+          name: "Ritual Facilitation",
+          description: "Custom-designed and held rites of passage: thresholds, endings, consecrations, dedications to Lilith or the Dark Mother under any of her names.",
+          format: "Private; DMV in-person preferred",
+          serviceType: "Ritual",
+        }),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: serviceSchema({
+          name: "Chart and Timing Work",
+          description: "Sidereal 13-sign birth chart with Lilith emphasis (Black Moon Lilith, Lilith asteroid, Ophiuchan placements), or planetary hour election for important workings.",
+          format: "Asynchronous written reading with 30-minute follow-up",
+          serviceType: "Astrological consultation",
+        }),
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        item: serviceSchema({
+          name: "Formal Dedication to Lilith",
+          description: "Multi-week initiatory process for those ready to formally dedicate themselves to the Night Mother's current. Culminates in a private consecration. By invitation after initial counsel.",
+          format: "Multi-week; by invitation only",
+          serviceType: "Initiation",
+        }),
+      },
+    ],
+  };
+}
+
 /* ───────── DefinedTerm — for Lilitu the concept ───────── */
 export function lilituConceptSchema() {
   return {

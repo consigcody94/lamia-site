@@ -6,8 +6,8 @@ import { LINKS } from "@/lib/data";
 import { HuluppuTree } from "./HuluppuTree";
 
 const NAV = [
+  { href: "/lilith", label: "Lilith" },
   { href: "/lilitu", label: "Lilitu" },
-  { href: "/#teachings", label: "Teachings" },
   { href: "/letters", label: "Letters" },
   { href: "/lattice", label: "Lattice" },
   { href: "/lineage", label: "Lineage" },
