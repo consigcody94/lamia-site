@@ -3,16 +3,30 @@ import Link from "next/link";
 import { TopNav } from "@/components/TopNav";
 import { Footer } from "@/components/Footer";
 import { Lineage } from "@/components/Lineage";
+import { JsonLd } from "@/components/JsonLd";
+import { lineageCollectionSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "The Lineage · Books of the Tradition · Os Lamia",
   description:
-    "The line I hold and the books that ground it. From the founding circle of the Greater Church of Lucifer through the primary Gnostic and Kabbalistic sources to the contemporary Qliphothic system-makers. Mapped honestly from the seat of the priesthood.",
+    "The line Os Lamia holds and the books that ground it. From the founding circle of the Greater Church of Lucifer through the primary Gnostic and Kabbalistic sources (Apocryphon of John, Treatise on the Left Emanation, Zohar) to the contemporary Qliphothic system-makers. Mapped honestly from the seat of the priesthood.",
+  alternates: { canonical: "/lineage" },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/lineage`,
+    title: "The Lineage — Books of the Tradition",
+    description: "Founding circle of GCOL plus a 19-volume reading corpus mapped from the seat.",
+  },
 };
 
 export default function LineagePage() {
+  const crumbs = breadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Lineage", url: `${SITE_URL}/lineage` },
+  ]);
   return (
     <>
+      <JsonLd data={[lineageCollectionSchema(), crumbs]} />
       <TopNav />
       <main className="px-4 pt-28 pb-16 md:px-8 md:pt-36">
         <Lineage />

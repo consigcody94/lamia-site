@@ -4,16 +4,31 @@ import grimoire from "@/lib/liber-lilith.json";
 import { TopNav } from "@/components/TopNav";
 import { Footer } from "@/components/Footer";
 import { GrimoireReader } from "@/components/GrimoireReader";
+import { JsonLd } from "@/components/JsonLd";
+import { bookSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Liber Lilith · The Grimoire · Os Lamia",
   description:
-    "Liber Lilith, the Grimoire. The mysteries of forbidden knowledge revealed by Lilith, Queen of the Harlots, unto Lamech in the line of Cain. Compiled and hosted by Os Lamia, High Priest of Lilith.",
+    "Liber Lilith — Liber Umbrarum Tomus Primus. The grimoire of the Lilith priesthood, structured as the Hebrew aleph-bet. Twenty-two chapters revealed by Lilith, Queen of the Harlots, unto Lamech in the line of Cain. Compiled and bound by Os Lamia, High Priest of Lilith.",
+  alternates: { canonical: "/liber-lilith" },
+  openGraph: {
+    type: "book",
+    url: `${SITE_URL}/liber-lilith`,
+    title: "Liber Lilith — Liber Umbrarum Tomus Primus",
+    description: "The grimoire of the Lilith priesthood, twenty-two chapters of the Hebrew aleph-bet.",
+    authors: ["Os Lamia"],
+  },
 };
 
 export default function LiberLilithPage() {
+  const crumbs = breadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Liber Lilith", url: `${SITE_URL}/liber-lilith` },
+  ]);
   return (
     <>
+      <JsonLd data={[bookSchema(), crumbs]} />
       <TopNav />
       <main className="px-4 pt-28 pb-16 md:px-8 md:pt-36">
         <div className="mx-auto max-w-3xl">

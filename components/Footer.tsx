@@ -11,13 +11,16 @@ export function Footer() {
         <p className="font-caps text-[10px] uppercase tracking-[0.45em] text-[#ebdcc4]/45">
           {PRIEST.title} · {PRIEST.location}
         </p>
-        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2 font-caps text-[10px] uppercase tracking-[0.35em] text-[#ebdcc4]/55">
+        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-caps text-[10px] uppercase tracking-[0.35em] text-[#ebdcc4]/55">
+          <a href="/lilitu" className="transition hover:text-[#a8a09b]">Lilitu</a>
           <a href="/#teachings" className="transition hover:text-[#a8a09b]">Teachings</a>
           <a href="/#services" className="transition hover:text-[#a8a09b]">Services</a>
           <a href="/#writings" className="transition hover:text-[#a8a09b]">Writings</a>
           <a href="/liber-lilith" className="transition hover:text-[#a8a09b]">Grimoire</a>
+          <a href="/letters" className="transition hover:text-[#a8a09b]">Letters</a>
           <a href="/lattice" className="transition hover:text-[#a8a09b]">Lattice</a>
           <a href="/lineage" className="transition hover:text-[#a8a09b]">Lineage</a>
+          <a href="/faq" className="transition hover:text-[#a8a09b]">FAQ</a>
           <a href="/#about" className="transition hover:text-[#a8a09b]">About</a>
           <a href="/#contact" className="transition hover:text-[#a8a09b]">Contact</a>
         </nav>
