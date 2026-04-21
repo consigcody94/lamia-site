@@ -12,11 +12,14 @@ export function Footer() {
           {PRIEST.title} · {PRIEST.location}
         </p>
         <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2 font-caps text-[10px] uppercase tracking-[0.35em] text-[#ebdcc4]/55">
-          <a href="#teachings" className="transition hover:text-[#a8a09b]">Teachings</a>
-          <a href="#services" className="transition hover:text-[#a8a09b]">Services</a>
-          <a href="#writings" className="transition hover:text-[#a8a09b]">Writings</a>
-          <a href="#about" className="transition hover:text-[#a8a09b]">About</a>
-          <a href="#contact" className="transition hover:text-[#a8a09b]">Contact</a>
+          <a href="/#teachings" className="transition hover:text-[#a8a09b]">Teachings</a>
+          <a href="/#services" className="transition hover:text-[#a8a09b]">Services</a>
+          <a href="/#writings" className="transition hover:text-[#a8a09b]">Writings</a>
+          <a href="/liber-lilith" className="transition hover:text-[#a8a09b]">Grimoire</a>
+          <a href="/lattice" className="transition hover:text-[#a8a09b]">Lattice</a>
+          <a href="/lineage" className="transition hover:text-[#a8a09b]">Lineage</a>
+          <a href="/#about" className="transition hover:text-[#a8a09b]">About</a>
+          <a href="/#contact" className="transition hover:text-[#a8a09b]">Contact</a>
         </nav>
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-caps text-[10px] uppercase tracking-[0.3em]" style={{ color: "#c8977a" }}>
           <a href={LINKS.contact} className="transition hover:text-[#a8a09b]">Email</a>
