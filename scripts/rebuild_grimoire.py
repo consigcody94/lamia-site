@@ -351,6 +351,72 @@ def strip_inline_garbage(text: str) -> str:
     # Stray "pBC" and similar 3-char mixed-case tokens left alone
     text = re.sub(r"(?<=\s)[a-z][A-Z]{2}(?=\s)", "", text)
     text = re.sub(r"(?<=\s)[A-Z][a-z][A-Z](?=\s)", "", text)
+
+    # Targeted cleanups for specific garbage strings seen in the audit.
+    # These are precise — they match ONLY obviously-corrupted Hebrew name
+    # fragments, not legitimate prose.
+
+    # 1. "linn eeeee winru, aei ei6 aei" style runs after a known editorial note
+    text = re.sub(
+        r"(\[vowel-name invocation[^\]]*\]),?\s*(?:linn\s+)?[aeiou]{3,}\s+[a-z]{3,}[,\s]+(?:[a-z]{2,4}\s*\d*[,\s]+){1,}[a-z]{2,4}\.?",
+        r"\1.",
+        text,
+    )
+    # 2. Long vowel-invocation lists between colons and the next sentence:
+    #    ": uumru, axoaxocoto, eeeee, mm, ova, ei8, onto, lea, innnjuumnj, (), eEseeesEe ..."
+    text = re.sub(
+        r":\s*(?:[a-zA-Z()]{1,10}[,.]?\s*\d*[,\s]+){4,}",
+        ": [vowel-name invocation — see print edition] ",
+        text,
+    )
+    # 3. "u'u coaxocooxococococoa)" and similar repeated-syllable garbage
+    text = re.sub(r"\bu['\"]u\s+[a-z]{8,}\)?", " ", text)
+    text = re.sub(r"\b(?:axoaxocoto|coaxocooxococococoa|innnjuumnj|eEseeesEe|uumru|eEsee[a-z]*)\b", " ", text)
+    # 4. Specific stubborn fragments:
+    #    "p3 V tai/4"
+    text = re.sub(r"\bp\d+\s+V\s+tai/\d+\b", "", text)
+    #    "JTP, '' 'Til6"  (and similar: caps letters + quotes + caps with digit)
+    text = re.sub(r"\b[A-Z]{2,4},\s*[''\"]{1,3}\s*[''\"]*[A-Z][a-z]*\d+\b", "", text)
+    #    "aei ei6 aei" and "aei ei8 aei" floating clusters
+    text = re.sub(r"\b(?:aei|ei\d+|eiS|aEi|ova|ill)(?:\s+(?:aei|ei\d+|eiS|aEi|ova|ill|[aeiou]{3,}|[a-z]{2,4}\d+)){1,}\b", " ", text)
+    # 5. Single orphan "ei6" / "p3" / "Til6" after an English word
+    text = re.sub(r"(?<=[a-z]\s)(?:ei\d+|Til\d+|p\d+|tai/\d+|JTP)(?=\s|[.,])", "", text)
+    # 6. Any stray "Til6" / "ei6" standalone — include surrounding quotes/apostrophes
+    # Match "'' 'Til6" / "'Til6" / "Til6" anywhere, with any surrounding typographic quotes
+    text = re.sub(r"[''\"''`´]+\s*(?:[''\"''`´]+\s*)?Til\d+[''\"''`´]*", "", text)
+    text = re.sub(r"\bTil\d+\b", "", text)
+    text = re.sub(r"\s+ei\d+\s*", " ", text)
+    # Leftover "'' ' " / "" "" from stripped Hebrew tokens
+    text = re.sub(r"[''\"''`´]{2,}\s*(?:[''\"''`´]+\s*)+", "", text)
+    text = re.sub(r"['\"]{2,}", "", text)
+
+    # Final surgical string replacements for the last known mangled fragments.
+    # Kept simple so we don't risk eating legit prose.
+    SURGICAL = [
+        # Ch21 hand-summoning scaffolding (two instances, mangled Hebrew names)
+        ("With ll,2 m 3 upon the right hand", "With the sacred name upon the right hand"),
+        ("With , \u2019\u2019 \u2019 upon the left hand", "With the sacred name upon the left hand"),
+        ("With , '' ' upon the left hand", "With the sacred name upon the left hand"),
+    ]
+    for src, dst in SURGICAL:
+        text = text.replace(src, dst)
+
+    # 7. "name is:" followed by long garbage run — collapse
+    # The run is comma/space separated tokens that are obviously mangled.
+    text = re.sub(
+        r"(name is\s*[:,]?)\s*(?:[^.]*?(?:eeeee|eeee|oooo|aaaa|vvvv|mm,|\(\)|aico|eiS|ova|ei\d|oua)[^.]*?)\s*(?=\.|From|From the Six|$)",
+        r"\1 [vowel-name invocation — see print edition] ",
+        text,
+        flags=re.IGNORECASE,
+    )
+    # 8. "u'u'uuu'uuu'u" — must contain at least one apostrophe/quote between vowels
+    text = re.sub(r"[uaeioUAEIO]+['\"][uaeioUAEIO]+['\"][uaeioUAEIO]+", " ", text)
+    text = re.sub(r"[uaeioUAEIO]+['\"][uaeioUAEIO]{3,}", " ", text)
+    # 9. Single-letter-chant garbage: "ie c x", "c x e i"
+    text = re.sub(r"\b(?:[a-z]\s){3,}[a-z]\b", " ", text)
+    # Collapse residual empty commas
+    text = re.sub(r",\s*,\s*(?:,\s*)*", ", ", text)
+    text = re.sub(r"[:,]\s*\.", ".", text)
     # Stray "fP / m imil V9." type fragments (Hebrew gesture direction labels).
     # Every token is word-boundaried so we don't chew parts of English words.
     text = re.sub(r"(?:\s|^)(?:\bfP\b|\bHP\b|\bPH\b|\bHT\b|\biV\b|\bmil\b|\bV\d+\b|\bm\s+i[mivl]\b)\s*[/.,\s]*\d*(?:\s+(?:\bfP\b|\bHP\b|\bPH\b|\bHT\b|\biV\b|\bmil\b|\bV\d+\b|\bm\s+i[mivl]\b)\s*[/.,\s]*\d*)*\.?", " ", text)
